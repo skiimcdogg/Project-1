@@ -37,10 +37,13 @@ const batteryArea = document.querySelector(".target-battery")
 const windshieldArea = document.querySelector(".target-windshield")
 const smokeArea = document.querySelector(".target-smoke")
 
+// console.log(scoreNumber)
+
 function displayQuestion(i) {
     let question = questionsAnswers[i].question
     let answers = questionsAnswers[i].answers
     let answerNumbers = questionsAnswers[i].answer
+
     let answersArray = [];
     let answerNumbersArray = [];
     answerNumbers.forEach(number => {
@@ -66,17 +69,23 @@ function displayQuestion(i) {
         })
         // change de couleur 
         function colorChange(evt) {
+            let score = document.querySelector(".score-number")
+            let scoreNumber = score.innerHTML
             // console.log(evt)
             let eventButton = evt.target;
             // console.log(evt.target.value)
             let eventValue = evt.target.value;
-            console.log(eventValue)
-            
+            console.log(scoreNumber)
+
             // Il faut que le bouton devienne vert que si evt.target.value
             //est égale a answerNumbersArray
-            if(eventValue == answerNumbersArray) {
+            if (eventValue == answerNumbersArray) {
                 eventButton.classList.add("right-background");
-            } else {eventButton.classList.add("wrong-background")}
+                scoreNumber += 1;
+                alert("You deserve a point champ'");
+            } else {
+                eventButton.classList.add("wrong-background")
+            }
         }
 
     })

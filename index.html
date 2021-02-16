@@ -12,22 +12,21 @@
 
 <body>
     <header id="header">
-        <h1 id="header-title">Would you be able to fix my car ?</h1>
-        <!-- <p>Parts of the car fixed : 0</p> == BONUS  -->
+        <div class="title-score">
+            <h1 id="header-title">Would you be able to fix my car ?</h1>
+            <p class="score">Parts of the car fixed : <span class="score-number"> 0</span>/4</p>
+        </div>
     </header>
     <section id="img-car">
         <h2 id="img-title">How does it looks, doctor ?</h2>
-        <img id="image" src="./img/307_fantome.jpg" usemap="#image-map">
+        <img id="image" src="./img/307_fantome-copie.jpg" usemap="#image-map">
 
+        
         <map name="image-map">
-            <area target="" class="target-tire" alt="My tire !" title="My tire !"  coords="460,579,110" shape="circle">
-            <area target="" class="target-battery"alt="My Battery !" title="My Batterie !" 
-                coords="160,327,250,363,237,435,164,454,108,442,109,370,121,334" shape="poly">
-            <area target="" class="target-windshield" alt="My windshield !" title="My windshield !" 
-                coords="424,201,347,243,258,315,334,352,423,373,489,374,529,338,568,291,610,247,517,215" shape="poly">
-            <area target="" class="target-smoke" alt="The exhaust smoke" title="My exhaust smoke" 
-                coords="943,224,825,337,780,423,816,473,868,504,935,507,986,486,1017,441,1023,336,1017,247,979,223"
-                shape="poly">
+            <area target="" class="target-battery" alt="My engine !" title="My engine !"  coords="45,271,199,385" shape="rect">
+            <area target="" class="target-tire" alt="My tire !" title="My tire !"  coords="360,442,83" shape="circle">
+            <area target="" class="target-windshield" alt="My windshield !" title="My windshield !" coords="197,245,263,280,385,301,477,191,329,154,254,194" shape="poly">
+            <area target="" class="target-smoke" alt="My exhaust smoke !" title="My exhaust smoke !" coords="793,119,673,166,647,268,657,343,674,412,799,407" shape="poly">
         </map>
 
     </section>
