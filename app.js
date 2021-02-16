@@ -40,8 +40,13 @@ const smokeArea = document.querySelector(".target-smoke")
 function displayQuestion(i) {
     let question = questionsAnswers[i].question
     let answers = questionsAnswers[i].answers
-
+    let answerNumbers = questionsAnswers[i].answer
     let answersArray = [];
+    let answerNumbersArray = [];
+    answerNumbers.forEach(number => {
+        answerNumbersArray.push(number);
+    })
+    console.log(answerNumbersArray)
     answers.forEach(answer => {
 
         answersArray.push(answer)
@@ -61,11 +66,17 @@ function displayQuestion(i) {
         })
         // change de couleur 
         function colorChange(evt) {
-            console.log(evt)
-            console.log(evt.target)
-            console.log(evt.target.value)
-            const element = evt.target
-            element.classList.add("wrong-background")
+            // console.log(evt)
+            let eventButton = evt.target;
+            // console.log(evt.target.value)
+            let eventValue = evt.target.value;
+            console.log(eventValue)
+            
+            // Il faut que le bouton devienne vert que si evt.target.value
+            //est égale a answerNumbersArray
+            if(eventValue == answerNumbersArray) {
+                eventButton.classList.add("right-background");
+            } else {eventButton.classList.add("wrong-background")}
         }
 
     })
