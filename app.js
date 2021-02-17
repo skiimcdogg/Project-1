@@ -37,10 +37,9 @@ const batteryArea = document.querySelector(".target-battery")
 const windshieldArea = document.querySelector(".target-windshield")
 const smokeArea = document.querySelector(".target-smoke")
 let scoreSelector = document.querySelector(".score-number")
-var score = 0;
-
-
-// console.log(scoreNumber)
+let livesSelector = document.querySelector(".life")
+let score = 0;
+let lives = 3;
 
 function displayQuestion(i) {
     let question = questionsAnswers[i].question
@@ -56,11 +55,13 @@ function displayQuestion(i) {
 
         answersArray.push(answer)
         questionPart.innerHTML = `
+        <div class="footer-part"
         <h3 class="question">${question}</h3>
         <button class="buttons" value="1">${answersArray[0]}</button>
         <button class="buttons" value="2">${answersArray[1]}</button>
         <button class="buttons" value="3">${answersArray[2]}</button>
         <button class="buttons" value="4">${answersArray[3]}</button>
+        </div>
         `
         buttons = document.querySelectorAll(".buttons")
         // Je veux que les boutons changent de couleurs quand on clique
@@ -69,16 +70,8 @@ function displayQuestion(i) {
             // écouter le click
             btn.addEventListener("click", colorChange);
         })
-        //je veux ajouter un a mon score a chaque bonne réponse
-        // function addScore() {
-        // let score = document.querySelector(".score-number")
-        // let scoreCount = score.innerHTML = 0;
-        //    console.log(typeof(scoreCount)) 
-        // }
         // change de couleur 
         function colorChange(evt) {
-            // console.log(typeof(scoreCount))
-            // let scoreNumberToNumber = parseInt(scoreNumber);
             // console.log(evt)
             let eventButton = evt.target;
             // console.log(evt.target.value)
@@ -90,13 +83,20 @@ function displayQuestion(i) {
                 eventButton.classList.add("right-background");
                 score = score + 1;
                 scoreSelector.innerHTML = score;
-                console.log(score)
-
-                // addScore();
-                // console.log(scoreNumberToNumber)
-                // alert("You deserve a point champ'");
+                alert("YOU deserve a point champ!")
+                if (score === 4) {
+                    alert("CONGRATULATIONS! You're hired");
+                    document.location.reload();
+                }
             } else {
                 eventButton.classList.add("wrong-background");
+                lives = lives - 1;
+                livesSelector.innerHTML = lives;
+                alert("WRONG");
+                if (lives === 0) {
+                    alert("GAME OVER");
+                    document.location.reload();
+                }
             }
         }
 
@@ -115,4 +115,3 @@ windshieldArea.addEventListener("click", function () {
 smokeArea.addEventListener("click", function () {
     displayQuestion(0)
 });
-

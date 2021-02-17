@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 0px;
+    margin-bottom: 5px;
     font-family: "Quicksand";
 }
 
@@ -57,20 +58,23 @@ h2 {
     color: black;
 }
 
-.question {
+.footer-part:nth-child(1) {
+    font-weight: bold;
+    font-size: 22px;
     font-family: "Lora";
     text-align: center;
     padding-left: 9px;
+    padding-bottom: 10px;
 }
 
 .buttons {
     cursor: pointer;
     border: none;
     border-radius: 3px;
-    margin: 0 7px 11px 0;
+    margin: 10px 7px 11px 0;
     padding: 0 20px;
     line-height: 45px;
-    width: 100%;
+    width: 90%;
     height: 45px;
     font-size: 120%;
     box-shadow: 0 6px rgba(0, 0, 0, 0.2);
