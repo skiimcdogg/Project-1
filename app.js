@@ -109,7 +109,7 @@ function displayQuestion(i) {
                 eventButton.classList.add("wrong-background");
                 lives = lives - 1;
                 livesSelector.innerHTML = lives;
-                alert("WRONG");
+                // alert("WRONG");
                 if (lives === 0) {
                     alert("GAME OVER");
                     document.location.reload();
