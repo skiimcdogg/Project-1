@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
 body {
     font-family: "Anton";
     box-sizing: border-box;
@@ -40,7 +41,7 @@ h2 {
 
 #footer {
     height: 375px;
-    background-color: rgb(0, 0, 0, 0.5);
+    background-color: rgb(0, 0, 0, 0.3);
 }
 
 .not-displayed {
@@ -74,9 +75,19 @@ h2 {
     margin: 10px 7px 11px 0;
     padding: 0 20px;
     line-height: 45px;
-    width: 90%;
+    width: 60%;
     height: 45px;
-    font-size: 120%;
+    font-size: 110%;
     box-shadow: 0 6px rgba(0, 0, 0, 0.2);
-    
+
+}
+
+.buttons:hover {
+    background-color: rgb(211,222,219);
+    -moz-transform: scale(0.9) translate(-2px, 0px);
+    -webkit-transform: scale(0.9) translate(-2px, 0px);
+    -o-transform: scale(0.9) translate(-2px, 0px);
+    -ms-transform: scale(0.9) translate(-2px, 0px);
+    transform: scale(0.9) translate(-2px, 0px);
+
 }

@@ -38,6 +38,7 @@ const windshieldArea = document.querySelector(".target-windshield")
 const smokeArea = document.querySelector(".target-smoke")
 let scoreSelector = document.querySelector(".score-number")
 let livesSelector = document.querySelector(".life")
+let footerDiv
 let score = 0;
 let lives = 3;
 
@@ -47,10 +48,10 @@ function displayQuestion(i) {
     let answerNumbers = questionsAnswers[i].answer
     let answersArray = [];
     let answerNumbersArray = [];
+    let timeoutId
     answerNumbers.forEach(number => {
         answerNumbersArray.push(number);
     })
-    console.log(answerNumbersArray)
     answers.forEach(answer => {
 
         answersArray.push(answer)
@@ -63,13 +64,16 @@ function displayQuestion(i) {
         <button class="buttons" value="4">${answersArray[3]}</button>
         </div>
         `
-        buttons = document.querySelectorAll(".buttons")
+        // footerDiv = document.querySelector(".footer-part");
+        console.log(footerDiv);
+        buttons = document.querySelectorAll(".buttons");
         // Je veux que les boutons changent de couleurs quand on clique
         // Chaque boutons
         buttons.forEach(btn => {
             // écouter le click
             btn.addEventListener("click", colorChange);
         })
+
         // change de couleur 
         function colorChange(evt) {
             // console.log(evt)
@@ -77,13 +81,26 @@ function displayQuestion(i) {
             // console.log(evt.target.value)
             let eventValue = evt.target.value;
 
+            function delayedUndisplayed() {
+                timeoutId = setTimeout(undisplayQuestionsDiv, 3000);
+            }
+
+            function undisplayQuestionsDiv() {
+                if (eventValue == answerNumbersArray) {
+                    footerDiv = document.querySelector(".footer-part");
+                    footerDiv.classList.add("not-displayed");
+                }
+            }
+
             // Il faut que le bouton devienne vert que si evt.target.value
             //est égale a answerNumbersArray
             if (eventValue == answerNumbersArray) {
                 eventButton.classList.add("right-background");
                 score = score + 1;
                 scoreSelector.innerHTML = score;
-                alert("YOU deserve a point champ!")
+                alert("YOU deserve a point champ!");
+                // footerDiv.classList.add("not-displayed");
+                delayedUndisplayed();
                 if (score === 4) {
                     alert("CONGRATULATIONS! You're hired");
                     document.location.reload();
