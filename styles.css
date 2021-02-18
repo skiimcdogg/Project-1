@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
     font-family: "Anton";
@@ -24,8 +25,10 @@ body {
 }
 
 #header-title {
+    margin-top: 0px;
     margin-bottom: 0px;
-    color: rgb(31, 247, 79);
+    color: rgb(161, 247, 31);
+    font-size: 300%;
 }
 
 #image {
@@ -34,18 +37,22 @@ body {
     margin-right: 0px;
 }
 
+
+
+
 h2 {
     display: flex;
     justify-content: center;
 }
 
 #footer {
+    padding-right: 45px;
     height: 375px;
     background-color: rgb(0, 0, 0, 0.3);
 }
 
 .not-displayed {
-    display: none;
+    visibility: hidden;
 }
 
 .right-background {
@@ -59,13 +66,14 @@ h2 {
     color: black;
 }
 
-.footer-part:nth-child(1) {
+ .footer-part:first-child { /*the question selector */
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
     font-family: "Lora";
     text-align: center;
-    padding-left: 9px;
+    padding-left: 133px;
     padding-bottom: 10px;
+    padding-right: 10px;
 }
 
 .buttons {
@@ -75,7 +83,7 @@ h2 {
     margin: 10px 7px 11px 0;
     padding: 0 20px;
     line-height: 45px;
-    width: 60%;
+    width: 65%;
     height: 45px;
     font-size: 110%;
     box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 0.2);
@@ -97,5 +105,22 @@ h2 {
 }
 
 .buttons:focus-visible {
-    outline: 3px solid blanchedalmond;;
+    outline: 3px solid blanchedalmond;
+    ;
+}
+
+.ul-fact {
+    position: absolute;
+    z-index: 1;
+    height: 580px;
+    width: 750px;
+    top: 200px;
+    left: 765px;
+}
+
+#fun-fact {
+    font-family: "Montserrat";
+    margin-top: 130px;
+    font-size: 20px;
+    text-align: justify;
 }
