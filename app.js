@@ -1,34 +1,8 @@
-// TIRE SECTION
-// const tireArea = document.querySelector(".target-tire");
-// const questionTire = document.querySelector(".question-3");
-// const answersTire = document.querySelector(".answers-3");
-// const answerButtonOne = document.querySelector(".answer3.btn1");
-// const answerButtonTwo = document.querySelector(".answer3.btn2");
-// const answerButtonThree = document.querySelector(".answer3.btn3");
-// console.log(answerButtonOne);
 
-// function displayQuestionTires() {
-//     questionTire.classList.remove("not-displayed");
-//     answersTire.classList.remove("not-displayed");
-// }
-
-// function displayRedColorButtonOne(btn) {
-//     btn.classList.add("wrong-background");
-// }
-
-// function displayRedColorButtonTwo() {
-//     answerButtonTwo.classList.add("wrong-background");
-// }
-
-// displayRedColorButtonOne(answerButtonOne);
-// answerButtonOne.addEventListener("click", displayRedColorButtonOne);
-// answerButtonTwo.addEventListener("click", displayRedColorButtonTwo);
-// // answerButtonThree.addEventListener("click", displayGreenColor);
-// tireArea.addEventListener("click", displayQuestionTires);
 import {
     questionsAnswers
 } from "./list.js";
-console.log(window.navigator);
+console.log("Version 1.0");
 
 let questionPart = document.querySelector(".questions")
 const tireArea = document.querySelector(".target-tire");
